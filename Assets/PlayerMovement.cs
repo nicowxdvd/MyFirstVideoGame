@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour{
 
     public float forwardForce  = 1000f;
     public float sidewaysForce = 600f;
-    
+     
     // Start is called before the first frame update
     void Start(){
         Debug.Log("Hola, mundo!");
@@ -23,12 +23,12 @@ public class PlayerMovement : MonoBehaviour{
         // Add a forwardForce
         rb.AddForce(0, 0, forwardForce * Time.deltaTime); 
         if ( Input.GetKey("d") ) {
-            rb.AddForce(sidewaysForce * Time.deltaTime, 0 ,0);
+            rb.AddForce(sidewaysForce * Time.deltaTime, 0 ,0, ForceMode.VelocityChange);
 
         }
 
         if ( Input.GetKey("a") ) {
-            rb.AddForce(-sidewaysForce * Time.deltaTime, 0 ,0);
+            rb.AddForce(-sidewaysForce * Time.deltaTime, 0 ,0, ForceMode.VelocityChange);
         }
     }
 
